@@ -182,7 +182,6 @@ unsafe fn init() {
 	KEYCONFIG = Some(keyconfig);
 
 	hook::hook_symbol("_ZNK6clHaspcvbEv", adachi as *const ());
-	hook::hook_symbol("_ZNK7clHasp2cvbEv", adachi as *const ());
 	hook::hook_symbol("_ZN18clSeqBootNetThread3runEPv", adachi as *const ());
 	adm::init();
 	al::load_al_funcs();
