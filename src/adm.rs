@@ -146,16 +146,6 @@ unsafe extern "C" fn adm_swap_buffers(window: *mut AdmWindow) -> c_int {
 }
 
 unsafe extern "C" fn adm_setup() -> c_int {
-	std::arch::asm!(
-		"push ebp",
-		"mov ebp, [esp + 0xDC]",
-		"mov {width:e}, [ebp - 0x14]",
-		"mov {height:e}, [ebp - 0x18]",
-		"pop ebp",
-		width = out(reg) WIDTH,
-		height = out(reg) HEIGHT,
-	);
-
 	1
 }
 pub unsafe fn init() {
